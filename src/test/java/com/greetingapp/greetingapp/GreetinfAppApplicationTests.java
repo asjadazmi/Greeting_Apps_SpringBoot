@@ -1,4 +1,4 @@
-package com.greetingapp.greetinfapp;
+package com.greetingapp.greetingapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

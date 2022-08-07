@@ -1,4 +1,4 @@
-package com.greetingapp.greetinfapp.entity;
+package com.greetingapp.greetingapp.entity;
 
 public class Student {
     private Long id;
