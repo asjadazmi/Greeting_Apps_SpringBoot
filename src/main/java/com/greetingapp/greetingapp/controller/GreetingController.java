@@ -6,6 +6,7 @@ import com.greetingapp.greetingapp.service.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
@@ -41,6 +42,10 @@ public class GreetingController {
     @PostMapping("/post/{FirstName}/{LastName}")
     public String sayHelloAndSaveInDatabase(@PathVariable String FirstName,@PathVariable String LastName ){
         return studentService.saveInDataBase(new User(FirstName,LastName));
+    }
+    @GetMapping("/findid/{id}")
+    public Optional<User> searchById(@PathVariable long id){
+        return studentService.findId(id);
     }
 
 }

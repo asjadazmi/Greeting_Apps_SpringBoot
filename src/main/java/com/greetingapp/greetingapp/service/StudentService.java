@@ -6,6 +6,7 @@ import com.greetingapp.greetingapp.repository.GreetingRepsitory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 @Service
 public class StudentService implements IStudentService {
@@ -22,6 +23,12 @@ public class StudentService implements IStudentService {
         greetingRepsitory.save(user);
         return "my name is "+user.getFirstName()+" "+user.getLastName();
 
+    }
+
+    @Override
+    public Optional<User> findId(long id) {
+        Optional<User> User =greetingRepsitory.findById(id);
+        return User;
     }
 
 
