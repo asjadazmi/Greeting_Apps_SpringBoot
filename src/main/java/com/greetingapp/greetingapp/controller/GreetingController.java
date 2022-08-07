@@ -1,6 +1,7 @@
 package com.greetingapp.greetingapp.controller;
 
 import com.greetingapp.greetingapp.entity.Student;
+import com.greetingapp.greetingapp.entity.User;
 import com.greetingapp.greetingapp.service.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,5 +31,13 @@ public class GreetingController {
     public Student greeting(){
         return studentService.greetingMessage();
     }
+//    uc3
+
+    @GetMapping("/greeting/{FirstName}/{LastName}")
+    public String greetings(@PathVariable String FirstName,@PathVariable String LastName){
+        return "Hello "+FirstName+"  "+LastName;
+
+    }
+
 
 }
