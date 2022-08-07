@@ -38,6 +38,9 @@ public class GreetingController {
         return "Hello "+FirstName+"  "+LastName;
 
     }
-
+    @PostMapping("/post/{FirstName}/{LastName}")
+    public String sayHelloAndSaveInDatabase(@PathVariable String FirstName,@PathVariable String LastName ){
+        return studentService.saveInDataBase(new User(FirstName,LastName));
+    }
 
 }
