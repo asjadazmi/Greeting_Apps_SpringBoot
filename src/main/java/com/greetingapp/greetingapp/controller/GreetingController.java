@@ -6,6 +6,9 @@ import com.greetingapp.greetingapp.service.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -47,5 +50,10 @@ public class GreetingController {
     public Optional<User> searchById(@PathVariable long id){
         return studentService.findId(id);
     }
+    @GetMapping("/findall")
+    public ArrayList<User> gettingAll(){
+        return studentService.findAll();
+    }
+
 
 }

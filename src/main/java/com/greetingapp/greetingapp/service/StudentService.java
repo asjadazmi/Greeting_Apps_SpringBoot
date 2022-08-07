@@ -6,6 +6,9 @@ import com.greetingapp.greetingapp.repository.GreetingRepsitory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 @Service
@@ -29,6 +32,12 @@ public class StudentService implements IStudentService {
     public Optional<User> findId(long id) {
         Optional<User> User =greetingRepsitory.findById(id);
         return User;
+    }
+
+    @Override
+    public ArrayList<User> findAll() {
+        List<User> User=greetingRepsitory.findAll();
+        return (ArrayList<com.greetingapp.greetingapp.entity.User>) User;
     }
 
 
