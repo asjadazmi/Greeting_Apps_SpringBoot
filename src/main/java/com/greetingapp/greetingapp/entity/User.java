@@ -42,7 +42,16 @@ public class User {
         LastName = lastName;
     }
 
+    public long getId() {
+        return id;
+    }
 
-
+    public void setId(long id) {
+        this.id = id;
+    }
+    public void updateUsers(User user){
+        this.FirstName=user.getFirstName();
+        this.LastName=user.getLastName();
+    }
 
 }
