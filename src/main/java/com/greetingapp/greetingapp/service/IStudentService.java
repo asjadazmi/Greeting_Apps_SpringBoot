@@ -12,6 +12,7 @@ public interface IStudentService {
     ArrayList<User> findAll();
 
     Optional<User> edit(User user,long id);
+    Optional<User> delete(long id);
 
 
 

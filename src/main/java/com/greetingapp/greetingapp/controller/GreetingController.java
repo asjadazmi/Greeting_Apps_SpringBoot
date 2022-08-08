@@ -60,5 +60,9 @@ public class GreetingController {
         return studentService.edit(user, id);
 
 }
+@DeleteMapping("/delete/{id}")
+    public Optional<User> deleteById(@PathVariable long id){
+        return studentService.delete(id);
+}
 
 }

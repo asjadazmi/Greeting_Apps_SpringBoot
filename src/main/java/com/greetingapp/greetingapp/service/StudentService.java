@@ -49,5 +49,12 @@ public class StudentService implements IStudentService {
         return Optional.of(user1.get());
     }
 
+    @Override
+    public Optional<User> delete(long id) {
+        Optional<User> user = this.findId(id);
+        greetingRepsitory.delete(user.get());
+        return Optional.of(user.get());
+    }
+
 
 }
